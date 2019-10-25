@@ -6,6 +6,9 @@ module.exports = validate_generator(
     check("password")
       .isLength({ max: 100, min: 6 })
       .isString(),
+    check("username")
+      .isLength({ max: 30, min: 6 })
+      .isString(),
   ],
-  "login"
+  "register"
 )

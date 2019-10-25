@@ -9,6 +9,7 @@ const calculator = async (req, res, next) => {
       warning("login/caculator", "user not found in database", req)
       return res.status(422).send({
         status: "warning",
+        type: "text",
         detail: { text: "user not found" },
       })
     }
@@ -35,6 +36,7 @@ const calculator = async (req, res, next) => {
       warning("login/calculator", "password od wrong", req)
       res.status(422).send({
         status: "warning",
+        type: "text",
         detail: { text: "password is wrong" },
       })
     }
