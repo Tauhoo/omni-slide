@@ -10,6 +10,7 @@ const update_key = require("./feature/update_key")
 
 const create_file = require("./feature/create_file")
 const create_folder = require("./feature/create_folder")
+const remove_file = require("./feature/remove_file")
 
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
@@ -39,5 +40,7 @@ app.post("/user/update_key", ...update_key)
 
 app.post("/user/create_folder", ...create_folder)
 app.post("/user/create_file", ...create_file)
+
+app.post("/user/remove_file", ...remove_file)
 
 app.listen(port, start_server)
