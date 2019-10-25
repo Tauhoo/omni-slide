@@ -8,4 +8,5 @@ module.exports = {
     post: "5432",
   },
   log_location: "./logs/server.log",
+  session_secret: "UWSSRhG)apS,4bH",
 }
