@@ -21,7 +21,7 @@ CREATE TABLE "folder" (
 CREATE TABLE "file" (
     id          serial          PRIMARY KEY UNIQUE,
     folder_id   INTEGER         NOT NULL,
-    name        INTEGER         NOT NULL,
+    name        VARCHAR(30)     NOT NULL,
     data        JSON            NOT NULL
 );
 
