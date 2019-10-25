@@ -12,7 +12,7 @@ CREATE TABLE "user" (
     token       VARCHAR(100)    NOT NULL
 );
 
-CREATE TABLE folder (
+CREATE TABLE "folder" (
     id          serial          PRIMARY KEY UNIQUE,
     user_id     INTEGER         NOT NULL,
     name        VARCHAR(30)     NOT NULL
@@ -24,3 +24,15 @@ CREATE TABLE "file" (
     name        INTEGER         NOT NULL,
     data        JSON            NOT NULL
 );
+
+
+CREATE OR REPLACE FUNCTION deleteFolderRoot() RETURNS TRIGGER AS $delete_folder$
+   BEGIN
+    DELETE FROM file WHERE folder_id = OLD.id;
+    RETURN OLD;
+   END;
+   
+$delete_folder$ LANGUAGE plpgsql;
+
+CREATE TRIGGER onDeleteFolderRoot AFTER DELETE ON folder
+FOR EACH ROW EXECUTE PROCEDURE deleteFolderRoot();
