@@ -8,6 +8,8 @@ const login_session = require("./feature/login_session")
 const logout = require("./feature/logout")
 const update_key = require("./feature/update_key")
 
+const create_folder = require("./feature/create_folder")
+
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
 
@@ -33,5 +35,7 @@ app.post("/logout", ...logout)
 app.use("/user", ...filter_not_login)
 
 app.post("/user/update_key", ...update_key)
+
+app.post("/user/create_folder", ...create_folder)
 
 app.listen(port, start_server)

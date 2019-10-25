@@ -4,8 +4,7 @@ const create_folder = async (name, user_id) => {
   try {
     const data = await query(
       `
-      INSERT INTO "folder" (name, user_id) VALUE ($1, $2)
-      RETURNING name, id;
+      INSERT INTO "folder" (name, user_id) VALUES ($1, $2);
     `,
       [name, user_id]
     )
