@@ -1,3 +1,4 @@
+const pool = require("./pool")
 const query = async (sql, arg) => {
   try {
     const client = await pool.connect()

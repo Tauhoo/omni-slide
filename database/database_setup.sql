@@ -1,5 +1,7 @@
 CREATE DATABASE omni_slide;
 
+ALTER USER postgres PASSWORD 'Kd95d$NP9=w%A_M6';
+
 \c omni_slide
 
 CREATE TABLE "user" (
