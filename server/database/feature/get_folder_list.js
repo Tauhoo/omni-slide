@@ -4,7 +4,7 @@ const get_folder_list = async user_id => {
   try {
     const data = await query(
       `
-    SELECT * 
+    SELECT id, name 
     FROM "folder" 
     WHERE user_id = $1;
     `,

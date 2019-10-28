@@ -4,7 +4,7 @@ const get_file = async (id, user_id) => {
   try {
     const data = await query(
       `
-    SELECT * 
+    SELECT id, folder_id, name, data
     FROM "file" 
     WHERE folder_id = $1 AND user_id = $2;
     `,
