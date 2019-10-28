@@ -1,6 +1,6 @@
 const query = require("../query")
 
-const create_file = async (id, folder_id, user_id) => {
+const remove_file = async (id, folder_id, user_id) => {
   try {
     const data = await query(
       `
@@ -22,4 +22,4 @@ const create_file = async (id, folder_id, user_id) => {
   }
 }
 
-module.exports = create_file
+module.exports = remove_file

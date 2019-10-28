@@ -1,14 +1,12 @@
 const query = require("../query")
 
-const create_file = async (id, user_id) => {
+const remove_folder = async (id, user_id) => {
   try {
     const data = await query(
       `
-      WITH deletion as (
-          DELETE FROM "folder" WHERE id = $1
-          RETURNING id
-      )
-      SELECT id, name FROM "folder" WHERE user_id = $2;
+      DELETE FROM "folder" 
+      WHERE id = $1 AND user_id = $2
+      RETURNING id;
     `,
       [id, user_id]
     )
@@ -19,4 +17,4 @@ const create_file = async (id, user_id) => {
   }
 }
 
-module.exports = create_file
+module.exports = remove_folder
