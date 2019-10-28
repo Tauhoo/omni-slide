@@ -1,15 +1,14 @@
 const query = require("../query")
 
-const update_file = async (id, folder_id, user_id, chunk) => {
+const get_folder_list = async user_id => {
   try {
     const data = await query(
       `
-      UPDATE "file"
-      SET data = $4 
-      WHERE id = $1 AND user_id = $3 AND folder_id = $2
-      RETURNING id;
+    SELECT * 
+    FROM "folder" 
+    WHERE user_id = $2;
     `,
-      [id, folder_id, user_id, chunk]
+      [user_id]
     )
     if (data.status === "error") throw data.detail
     return { status: "success", result: data.result }
@@ -18,4 +17,4 @@ const update_file = async (id, folder_id, user_id, chunk) => {
   }
 }
 
-module.exports = update_file
+module.exports = get_folder_list

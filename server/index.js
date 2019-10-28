@@ -10,11 +10,15 @@ const update_key = require("./feature/update_key")
 
 const create_file = require("./feature/create_file")
 const create_folder = require("./feature/create_folder")
+
 const remove_file = require("./feature/remove_file")
 const remove_folder = require("./feature/remove_folder")
+
 const update_file = require("./feature/update_file")
 const update_file_name = require("./feature/update_file_name")
 const update_folder_name = require("./feature/update_folder_name")
+
+const get_file = require("./feature/get_file")
 
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
@@ -51,5 +55,7 @@ app.post("/user/remove_folder", ...remove_folder)
 app.post("/user/update_file", ...update_file)
 app.post("/user/update_file_name", ...update_file_name)
 app.post("/user/update_folder_name", ...update_folder_name)
+
+app.get("/user/get_file/:folder_id/:file_id", ...get_file)
 
 app.listen(port, start_server)

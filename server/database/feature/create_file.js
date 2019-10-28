@@ -5,8 +5,8 @@ const create_file = async (name, folder_id, user_id) => {
   try {
     const data = await query(
       `
-      INSERT INTO "file" (folder_id, name, data)
-      SELECT id AS folder_id, $1 AS name, $4 AS data
+      INSERT INTO "file" (folder_id, name, data, user_id)
+      SELECT id AS folder_id, $1 AS name, $4 AS data, $3 AS user_id
       FROM "folder"
       WHERE id = $2 AND user_id = $3
       LIMIT 1
