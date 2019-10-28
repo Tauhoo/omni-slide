@@ -14,6 +14,7 @@ const remove_file = require("./feature/remove_file")
 const remove_folder = require("./feature/remove_folder")
 const update_file = require("./feature/update_file")
 const update_file_name = require("./feature/update_file_name")
+const update_folder_name = require("./feature/update_folder_name")
 
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
@@ -49,5 +50,6 @@ app.post("/user/remove_folder", ...remove_folder)
 
 app.post("/user/update_file", ...update_file)
 app.post("/user/update_file_name", ...update_file_name)
+app.post("/user/update_folder_name", ...update_folder_name)
 
 app.listen(port, start_server)

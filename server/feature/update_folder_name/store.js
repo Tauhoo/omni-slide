@@ -1,12 +1,11 @@
-const { update_file_name } = require("../../database")
+const { update_folder_name } = require("../../database")
 const { error } = require("../../utilise/log")
 
 const store = async (req, res, next) => {
   try {
-    const { id, folder_id, name } = req.body
-    const { status, result, detail } = await update_file_name(
+    const { id, name } = req.body
+    const { status, result, detail } = await update_folder_name(
       id,
-      folder_id,
       req.session.user.id,
       name
     )
@@ -15,7 +14,7 @@ const store = async (req, res, next) => {
     next()
   } catch (detail) {
     res.status(500).send({ status: "error" })
-    error("update_file_name/store", "error in try catch", detail, req)
+    error("update_folder_name/store", "error in try catch", detail, req)
   }
 }
 
