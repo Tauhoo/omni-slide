@@ -1,5 +1,5 @@
 module.exports = [
-  require("./validatior"),
+  require("./validator"),
   require("./fetch"),
   require("./sender"),
 ]

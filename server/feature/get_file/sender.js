@@ -13,7 +13,7 @@ const sender = async (req, res) => {
     success("get_file/sender", "user get file success", req)
     res.send({
       status: "success",
-      result: req.database_result.rows,
+      result: req.database_result.rows[0],
     })
   } catch (e) {
     error("get_file/sender", "error in try catch", e, req)
