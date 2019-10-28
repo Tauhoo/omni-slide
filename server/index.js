@@ -21,6 +21,7 @@ const update_folder_name = require("./feature/update_folder_name")
 const get_file = require("./feature/get_file")
 const get_folder_list = require("./feature/get_folder_list")
 const get_folder_file = require("./feature/get_folder_file")
+const get_file_by_token = require("./feature/get_file_by_token")
 
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
@@ -43,6 +44,8 @@ app.post("/login", ...login)
 app.post("/register", ...register)
 app.post("/login_session", ...login_session)
 app.post("/logout", ...logout)
+
+app.get("/get_file_by_token", ...get_file_by_token)
 
 app.use("/user", ...filter_not_login)
 
