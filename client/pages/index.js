@@ -21,7 +21,9 @@ export default () => (
           focus on the core of your application.
         </Paragraph>
       </Typography>
+      <br></br>
       <Divider />
+      <br />
       <Typography>
         <Title>It's easier than you think</Title>
         <Paragraph>
@@ -35,7 +37,9 @@ export default () => (
       <CodeBlock>
         <Code color='white'>import React from 'react'</Code>
       </CodeBlock>
+      <br />
       <Divider />
+      <br></br>
       <Typography>
         <Title>It's easier than you think</Title>
         <Paragraph>

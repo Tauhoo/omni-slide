@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import WebContainer from "../WebContainer"
+import RegisterButton from "../RegisterForm"
+
 const Container = styled.div`
   width: 100%;
   height: 70px;
@@ -20,7 +22,9 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <WebContainer>
-      <Container></Container>
+      <Container>
+        <RegisterButton></RegisterButton>
+      </Container>
     </WebContainer>
   </Wrapper>
 )

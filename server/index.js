@@ -2,6 +2,9 @@ const express = require("express")
 const session = require("express-session")
 
 const { port, session_secret } = require("./config")
+
+const cors = require("./utilise/cors")
+
 const login = require("./feature/login")
 const register = require("./feature/register")
 const login_session = require("./feature/login_session")
@@ -39,6 +42,8 @@ app.use(
     resave: true,
   })
 )
+
+app.use(cors)
 
 app.post("/login", ...login)
 app.post("/register", ...register)

@@ -28,6 +28,9 @@ export default class MyDocument extends Document {
             body, html { margin: 0; font-size: 16px; padding: 0px !important;
               overflow: unset !important;
             }
+            body {
+              width: 100% !important;
+            }
             `}</style>
           {styleTags}
         </Head>

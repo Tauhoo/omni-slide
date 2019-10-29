@@ -9,4 +9,5 @@ module.exports = {
   },
   log_location: "./logs/server.log",
   session_secret: "UWSSRhG)apS,4bH",
+  client: "http://localhost:8080",
 }
