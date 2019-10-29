@@ -1,22 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import WebContainer from "../WebContainer"
+
 const Container = styled.div`
   width: 100%;
-  height: 70px;
-  background-color: #34495e;
+  height: 100px;
 `
-
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #34495e;
-  display: flex;
+  background-color: #2d3436;
+  display: grid;
   justify-content: center;
-  border-style: solid;
-  border-bottom-color: #1a1b23;
-  border-width: 0px 0px 1px 0px;
 `
-
 export default () => (
   <Wrapper>
     <WebContainer>

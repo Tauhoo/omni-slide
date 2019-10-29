@@ -6,9 +6,18 @@ import styled from "styled-components"
 import "antd/dist/antd.less"
 
 import Navbar from "../component/Navbar"
+import Footer from "../component/Footer"
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -23,7 +32,13 @@ class Main extends App {
       <>
         <Wrapper>
           <Navbar></Navbar>
-          <Component {...pageProps} />
+          <ContentWrapper>
+            <Component {...pageProps} />
+          </ContentWrapper>
+          <br />
+          <br />
+          <br />
+          <Footer></Footer>
         </Wrapper>
       </>
     )
