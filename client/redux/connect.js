@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import store from "../redux/store"
+import store from "./store"
 
 export default (mapStateToProps, mapDispatchToProps, component) =>
   store(

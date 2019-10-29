@@ -29,6 +29,7 @@ export const register_handle = async function({
         warning: "Error can't register",
         is_warning: true,
         loading: false,
+        visible: false,
       })
 
     if (status === "warning") {
@@ -37,20 +38,24 @@ export const register_handle = async function({
           is_warning: true,
           warning: detail.text,
           loading: false,
+          visible: false,
         })
       console.log(detail)
       return this.setState({
         is_warning: true,
         warning: "Data is invalid",
         loading: false,
+        visible: false,
       })
     }
 
-    this.setState({ loading: false }, () => this.props.update_profile(result))
+    this.setState({ loading: false, visible: false }, () =>
+      this.props.update_profile(result)
+    )
     Success("Register success", "You can create your folder and file now")
   } catch (e) {
     console.log(e)
-    return { status: "error" }
+    return { status: "error", visible: false }
   }
 }
 

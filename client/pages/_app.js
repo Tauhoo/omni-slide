@@ -1,6 +1,5 @@
 import React from "react"
 import App from "next/app"
-import store from "../redux/store"
 import styled from "styled-components"
 
 import "antd/dist/antd.less"
@@ -45,4 +44,4 @@ class Main extends App {
   }
 }
 
-export default store(Main)
+export default Main

@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import store from "../redux/store"
 import Banner from "../component/Banner"
 import WebContainer from "../component/WebContainer"
 import CodeBlock, { Code } from "../component/CodeBlock"
@@ -8,7 +8,7 @@ import { Typography, Divider } from "antd"
 
 const { Title, Paragraph } = Typography
 
-export default () => (
+const index = () => (
   <>
     <Banner></Banner>
     <WebContainer>
@@ -53,3 +53,5 @@ export default () => (
     </WebContainer>
   </>
 )
+
+export default index
