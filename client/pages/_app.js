@@ -1,5 +1,5 @@
 import React from "react"
-import App, { Container } from "next/app"
+import App from "next/app"
 import store from "../redux/store"
 import styled from "styled-components"
 
@@ -20,12 +20,12 @@ class Main extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <Container>
+      <>
         <Wrapper>
           <Navbar></Navbar>
           <Component {...pageProps} />
         </Wrapper>
-      </Container>
+      </>
     )
   }
 }
