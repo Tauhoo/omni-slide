@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Banner from "../component/Banner"
 import WebContainer from "../component/WebContainer"
 import CodeBlock, { Code } from "../component/CodeBlock"
+import GoodPoint from "../component/GoodPoint"
 import { Typography, Divider } from "antd"
 
 const { Title, Paragraph } = Typography
@@ -44,6 +45,7 @@ export default () => (
           focus on the core of your application.
         </Paragraph>
       </Typography>
+      <GoodPoint></GoodPoint>
     </WebContainer>
   </>
 )
