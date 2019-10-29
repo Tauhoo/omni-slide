@@ -3,9 +3,11 @@ import { createStore, combineReducers } from "redux"
 import { Provider } from "react-redux"
 
 import reducerProfile from "./reducers/profile"
+import reducerHistory from "./reducers/history"
 
 const rootReducer = combineReducers({
   reducerProfile,
+  reducerHistory,
 })
 
 const debug =
