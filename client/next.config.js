@@ -1,12 +1,13 @@
 const withLess = require("@zeit/next-less")
 const withCSS = require("@zeit/next-css")
-const webpack = require("webpack")
 module.exports = {
   exportTrailingSlash: true,
   ...withCSS(
     withLess({
       lessLoaderOptions: {
-        modifyVars: {},
+        modifyVars: {
+          "primary-color": "#34495e",
+        },
         javascriptEnabled: true,
       },
       webpack: config => {
