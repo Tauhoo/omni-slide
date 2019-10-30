@@ -14,14 +14,13 @@ import login_session from "../lib/login_session"
 const Wrapper = styled.div`
   min-height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: max-content auto max-content;
 `
 
 const ContentWrapper = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -39,18 +38,18 @@ class Main extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <>
-        <Wrapper>
-          <Navbar></Navbar>
-          <ContentWrapper>
-            <Component {...pageProps} />
-          </ContentWrapper>
+      <Wrapper>
+        <Navbar></Navbar>
+        <ContentWrapper>
+          <Component {...pageProps} />
+        </ContentWrapper>
+        <div>
           <br />
           <br />
           <br />
           <Footer></Footer>
-        </Wrapper>
-      </>
+        </div>
+      </Wrapper>
     )
   }
 }

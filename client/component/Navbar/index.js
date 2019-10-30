@@ -1,10 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import WebContainer from "../WebContainer"
 import RegisterButton from "../RegisterForm"
 import LoginButton from "../LoginForm"
 import connect from "../../redux/connect"
 import Button from "../MenuButton"
+
+import { remove_profile } from "../../redux/action"
+
+import logout_session from "../../lib/logout_session"
 
 import Link from "next/link"
 
@@ -27,35 +31,44 @@ const Wrapper = styled.div`
   border-width: 0px 0px 1px 0px;
 `
 
-const index = ({ profile }) => {
-  const { is_login, username } = profile
+class index extends Component {
+  constructor(props) {
+    super(props)
+    this.logout_session = logout_session.bind(this)
+  }
+  render() {
+    const { is_login, username } = this.props.profile
 
-  return (
-    <Wrapper>
-      <WebContainer>
-        <Container>
-          {is_login ? (
-            <>
-              <Button>
-                <Link prefetch href='/folders'>
-                  <a>my folders</a>
-                </Link>
-              </Button>
-            </>
-          ) : (
-            <>
-              <RegisterButton></RegisterButton>
-              <LoginButton></LoginButton>
-            </>
-          )}
-        </Container>
-      </WebContainer>
-    </Wrapper>
-  )
+    return (
+      <Wrapper>
+        <WebContainer>
+          <Container>
+            {is_login ? (
+              <>
+                <Button>
+                  <Link prefetch href='/folders'>
+                    <a>my folders</a>
+                  </Link>
+                </Button>
+                <Button onClick={() => this.logout_session()}>logout</Button>
+              </>
+            ) : (
+              <>
+                <RegisterButton></RegisterButton>
+                <LoginButton></LoginButton>
+              </>
+            )}
+          </Container>
+        </WebContainer>
+      </Wrapper>
+    )
+  }
 }
 
 export default connect(
   state => ({ profile: state.reducerProfile }),
-  () => ({}),
+  dispatch => ({
+    remove_profile: () => dispatch(remove_profile()),
+  }),
   index
 )
