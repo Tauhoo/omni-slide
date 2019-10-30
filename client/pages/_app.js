@@ -6,6 +6,10 @@ import "antd/dist/antd.less"
 
 import Navbar from "../component/Navbar"
 import Footer from "../component/Footer"
+import connect from "../redux/connect"
+import { update_profile } from "../redux/action"
+
+import login_session from "../lib/login_session"
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -25,6 +29,13 @@ const ContentWrapper = styled.div`
 `
 
 class Main extends App {
+  constructor(props) {
+    super(props)
+    this.login_session = login_session.bind(this)
+  }
+  async componentDidMount() {
+    await this.login_session()
+  }
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -44,4 +55,8 @@ class Main extends App {
   }
 }
 
-export default Main
+export default connect(
+  () => ({}),
+  dispatch => ({ update_profile: data => dispatch(update_profile(data)) }),
+  Main
+)

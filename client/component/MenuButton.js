@@ -5,12 +5,17 @@ const Container = styled.button`
   background-color: transparent;
   border-width: 0px;
   transition: 0.3s;
-  color: #60a3bc;
   outline: none;
+  color: #60a3bc;
+  * {
+    color: #60a3bc;
+  }
 
   &:hover {
-    border-color: white;
     color: #82ccdd;
+    * {
+      color: #82ccdd;
+    }
     > div {
       opacity: 1;
     }

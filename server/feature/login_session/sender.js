@@ -4,7 +4,7 @@ const sender = async (req, res) => {
     const { username, email, token } = req.session.user
 
     success("login_session/sender", "user session login success", req)
-    res.send({ username, email, token })
+    res.send({ status: "success", result: { username, email, token } })
   } catch (e) {
     error("login_session/sender", "error in try catch", e, req)
     res.status(500).send({ status: "error" })

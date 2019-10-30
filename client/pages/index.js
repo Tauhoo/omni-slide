@@ -1,5 +1,4 @@
 import React from "react"
-import store from "../redux/store"
 import Banner from "../component/Banner"
 import WebContainer from "../component/WebContainer"
 import CodeBlock, { Code } from "../component/CodeBlock"
