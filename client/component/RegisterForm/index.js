@@ -4,7 +4,7 @@ import { Modal } from "antd"
 import MenuButton from "../MenuButton"
 import { Icon, Input, Button, Alert } from "antd"
 import connect from "../../redux/connect"
-import { update_profile } from "../../redux/action"
+import { update_profile } from "../../redux/action/profile_action"
 import { register_handle } from "./handle"
 
 const Container = styled.div`

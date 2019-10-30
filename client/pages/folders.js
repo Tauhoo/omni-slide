@@ -1,12 +1,22 @@
 import React from "react"
 import WebContainer from "../component/WebContainer"
-import { Typography, Divider } from "antd"
+import History from "../component/History"
+import { Typography, Divider, Icon } from "antd"
+import {} from "../redux/action/profile_action"
 
 const { Title, Paragraph } = Typography
 
 const index = () => (
   <>
-    <WebContainer></WebContainer>
+    <WebContainer>
+      <br />
+      <br />
+      <History
+        data={[[<Icon type='home' />, "/"], ["folders", null]]}
+      ></History>
+      <br />
+      <Title>Folders</Title>
+    </WebContainer>
   </>
 )
 

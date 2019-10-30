@@ -7,7 +7,7 @@ export const Confirm = (title, content) =>
     title,
     content,
     footer: [null, null],
-    okText: "ตกลง",
+    okText: "ok",
   })
 
 export const Warning = (title, content) =>
@@ -15,7 +15,7 @@ export const Warning = (title, content) =>
     title,
     content,
     footer: [null, null],
-    okText: "ตกลง",
+    okText: "ok",
   })
 
 export const Error = (title, content) =>
@@ -23,7 +23,7 @@ export const Error = (title, content) =>
     title,
     content,
     footer: [null, null],
-    okText: "ตกลง",
+    okText: "ok",
   })
 
 export const Success = (title, content) =>
@@ -31,7 +31,7 @@ export const Success = (title, content) =>
     title,
     content,
     footer: [null, null],
-    okText: "ตกลง",
+    okText: "ok",
   })
 
 export const Info = (title, content) =>
@@ -39,5 +39,5 @@ export const Info = (title, content) =>
     title,
     content,
     footer: [null, null],
-    okText: "ตกลง",
+    okText: "ok",
   })

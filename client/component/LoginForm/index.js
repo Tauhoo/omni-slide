@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Modal } from "antd"
 import MenuButton from "../MenuButton"
 import { Icon, Input, Button, Alert } from "antd"
-import { update_profile } from "../../redux/action"
+import { update_profile } from "../../redux/action/profile_action"
 import { login_handle } from "./handle"
 
 import connect from "../../redux/connect"

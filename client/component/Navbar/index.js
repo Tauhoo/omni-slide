@@ -6,7 +6,7 @@ import LoginButton from "../LoginForm"
 import connect from "../../redux/connect"
 import Button from "../MenuButton"
 
-import { remove_profile } from "../../redux/action"
+import { remove_profile } from "../../redux/action/profile_action"
 
 import logout_session from "../../lib/logout_session"
 

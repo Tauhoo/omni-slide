@@ -7,7 +7,7 @@ import "antd/dist/antd.less"
 import Navbar from "../component/Navbar"
 import Footer from "../component/Footer"
 import connect from "../redux/connect"
-import { update_profile } from "../redux/action"
+import { update_profile } from "../redux/action/profile_action"
 
 import login_session from "../lib/login_session"
 

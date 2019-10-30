@@ -3,9 +3,11 @@ import { createStore, combineReducers } from "redux"
 import { Provider } from "react-redux"
 
 import reducerProfile from "./reducers/profile"
+import reducerFolderAction from "./reducers/folders"
 
 const rootReducer = combineReducers({
   reducerProfile,
+  reducerFolderAction,
 })
 
 const debug =
