@@ -6,7 +6,8 @@ const get_folder_list = async user_id => {
       `
     SELECT id, name 
     FROM "folder" 
-    WHERE user_id = $1;
+    WHERE user_id = $1
+    ORDER BY id;
     `,
       [user_id]
     )

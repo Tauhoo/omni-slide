@@ -46,7 +46,7 @@ class index extends Component {
             {is_login ? (
               <>
                 <Button>
-                  <Link prefetch href='/folders'>
+                  <Link href='/folders'>
                     <a>my folders</a>
                   </Link>
                 </Button>

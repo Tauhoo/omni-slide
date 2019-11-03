@@ -12,8 +12,5 @@ export const post = (route, data) =>
 export const get = route =>
   fetch(server_src + "/" + route, {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
     credentials: "include",
   }).then(res => res.json())

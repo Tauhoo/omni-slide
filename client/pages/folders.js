@@ -1,10 +1,10 @@
 import React from "react"
 import WebContainer from "../component/WebContainer"
 import History from "../component/History"
-import { Typography, Divider, Icon } from "antd"
-import {} from "../redux/action/profile_action"
+import FolderList from "../component/FolderList"
+import { Typography, Icon } from "antd"
 
-const { Title, Paragraph } = Typography
+const { Title } = Typography
 
 const index = () => (
   <>
@@ -16,6 +16,7 @@ const index = () => (
       ></History>
       <br />
       <Title>Folders</Title>
+      <FolderList></FolderList>
     </WebContainer>
   </>
 )
