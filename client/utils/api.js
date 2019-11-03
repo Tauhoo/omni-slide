@@ -12,3 +12,7 @@ export const get_folder_list = () => get("user/get_folder_list")
 
 export const update_folder_name = (id, name) =>
   post("user/update_folder_name", { id, name })
+
+export const create_folder = name => post("user/create_folder", { name })
+
+export const remove_folder = id => post("user/remove_folder", { id })

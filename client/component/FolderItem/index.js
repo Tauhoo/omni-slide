@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { Typography } from "antd"
 import { Icon, Button } from "antd"
 import updateName from "./updateName"
+import removeFolder from "./removeFolder"
 
 import Link from "next/link"
 
@@ -40,17 +40,27 @@ const Input = styled.input`
 `
 
 export default class extends Component {
-  state = { is_open: false, edited: false, loading: false }
+  state = {
+    is_open: false,
+    edited: false,
+    loading: false,
+    delete_loading: false,
+  }
   defaultName = this.props.name
   name = this.props.name
 
   constructor(props) {
     super(props)
     this.updateName = updateName.bind(this)
+    this.removeFolder = removeFolder.bind(this)
   }
 
   submit = async () => {
     await this.updateName(this.name, this.props.id)
+  }
+
+  delete = async () => {
+    await this.removeFolder(this.props.id, this.props.onDelete)
   }
 
   onChange = ({ target }) => {
@@ -63,7 +73,7 @@ export default class extends Component {
   }
 
   render() {
-    const { is_open, edited, loading } = this.state
+    const { is_open, edited, loading, delete_loading } = this.state
     const { name, url } = this.props
     return (
       <Container edited={edited}>
@@ -78,7 +88,12 @@ export default class extends Component {
           </a>
         </Link>
         <NameContainer>
-          <Input type='text' defaultValue={name} onChange={this.onChange} />
+          <Input
+            type='text'
+            defaultValue={name}
+            onChange={this.onChange}
+            placeholder='folder name'
+          />
         </NameContainer>
         {edited ? (
           <Button
@@ -89,7 +104,9 @@ export default class extends Component {
             update name
           </Button>
         ) : null}
-        <Button type='danger'>delete</Button>
+        <Button type='danger' loading={delete_loading} onClick={this.delete}>
+          delete
+        </Button>
       </Container>
     )
   }

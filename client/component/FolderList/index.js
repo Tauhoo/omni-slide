@@ -3,6 +3,7 @@ import styled from "styled-components"
 import ContentContainer from "../ContentContainer"
 import getFolderList from "./getFolderList"
 import FolderItem from "../FolderItem"
+import AddFolderForm from "../AddFolderForm"
 
 const FolderListContainer = styled.div`
   display: grid;
@@ -21,6 +22,14 @@ export default class extends Component {
     await this.getFolderList()
   }
 
+  onCreate = async () => {
+    await this.getFolderList()
+  }
+
+  onDelete = async () => {
+    await this.getFolderList()
+  }
+
   render() {
     const { loading, error, error_message, folder_list } = this.state
     return (
@@ -31,8 +40,15 @@ export default class extends Component {
       >
         <FolderListContainer>
           {folder_list.map(({ name, id }) => (
-            <FolderItem name={name} id={id} key={id} url=''></FolderItem>
+            <FolderItem
+              name={name}
+              id={id}
+              key={id}
+              url=''
+              onDelete={this.onDelete}
+            ></FolderItem>
           ))}
+          <AddFolderForm onCreate={this.onCreate}></AddFolderForm>
         </FolderListContainer>
       </ContentContainer>
     )
