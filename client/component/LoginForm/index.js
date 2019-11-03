@@ -35,7 +35,6 @@ class LoginForm extends Component {
     if (!data) return
 
     this.data = JSON.parse(data)
-    console.log(this.data)
     this.setState({})
   }
 

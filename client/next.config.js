@@ -29,6 +29,8 @@ module.exports = {
   exportPathMap: () => {
     return {
       "/": { page: "/" },
+      "/folders": { page: "/folders" },
+      "/file": { page: "/file" },
     }
   },
 }

@@ -16,3 +16,14 @@ export const update_folder_name = (id, name) =>
 export const create_folder = name => post("user/create_folder", { name })
 
 export const remove_folder = id => post("user/remove_folder", { id })
+
+export const get_file_list = id => get(`user/get_folder_file/${id}`)
+
+export const remove_file = (folder_id, file_id) =>
+  post("user/remove_file", { folder_id, id: file_id })
+
+export const create_file = (folder_id, name) =>
+  post("user/create_file", { folder_id, name })
+
+export const update_file_name = (id, folder_id, name) =>
+  post("user/update_file_name", { id, folder_id, name })

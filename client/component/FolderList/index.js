@@ -44,7 +44,7 @@ export default class extends Component {
               name={name}
               id={id}
               key={id}
-              url=''
+              url={`/file?id=${id}`}
               onDelete={this.onDelete}
             ></FolderItem>
           ))}
