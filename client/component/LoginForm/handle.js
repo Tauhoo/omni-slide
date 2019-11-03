@@ -39,9 +39,13 @@ export const login_handle = async function({ email, password }) {
       })
     }
 
+    if (this.is_remember)
+      localStorage.setItem("login", JSON.stringify({ email, password }))
+
     this.setState({ loading: false, visible: false }, () =>
       this.props.update_profile(result)
     )
+
     Success("Login success", "You can manage your folder and file now")
   } catch (e) {
     console.log(e)

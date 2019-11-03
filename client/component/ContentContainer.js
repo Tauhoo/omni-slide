@@ -9,5 +9,11 @@ const Container = styled.div`
 `
 
 export default ({ loading, children }) => (
-  <Container>{loading ? <Icon type='loading' /> : children}</Container>
+  <Container>
+    {loading ? (
+      <Icon type='loading' style={{ fontSize: "100px", margin: "100px 0px" }} />
+    ) : (
+      children
+    )}
+  </Container>
 )

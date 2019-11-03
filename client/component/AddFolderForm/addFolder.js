@@ -1,12 +1,23 @@
 import { create_folder } from "../../utils/api"
-import { Error } from "../../utils/alert"
+import { Error, Warning } from "../../utils/alert"
 
 export default async function(name, callback) {
   try {
-    const { status } = await create_folder(name)
+    const { status, type, detail } = await create_folder(name)
+
+    if (status === "error") throw detail
+    if (status === "warning") {
+      if (type === "text") {
+        Warning("can't add new folder", detail.text)
+        this.setState({ loading: false })
+        return
+      }
+      throw detail
+    }
     callback()
   } catch (e) {
+    console.log(e)
     this.setState({ loading: false })
-    Error("เกิดข้อผิดพลาด", "ไม่สามารถเพิ่มโฟลเดอร์ได้")
+    Error("error", "can't add folder")
   }
 }

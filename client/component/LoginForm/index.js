@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { Modal } from "antd"
 import MenuButton from "../MenuButton"
-import { Icon, Input, Button, Alert } from "antd"
+import { Icon, Input, Button, Alert, Checkbox } from "antd"
 import { update_profile } from "../../redux/action/profile_action"
 import { login_handle } from "./handle"
 
@@ -13,14 +13,32 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 10px;
 `
+const CheckboxContainer = styled.div`
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+`
 
 class LoginForm extends Component {
   state = { visible: false, loading: false, is_warning: false, warning: "" }
   data = { password: "", email: "" }
+  is_remember = false
+
   constructor(props) {
     super(props)
     this.login_handle = login_handle.bind(this)
   }
+
+  componentDidMount() {
+    if (typeof window === "undefined") return
+    const data = localStorage.getItem("login")
+    if (!data) return
+
+    this.data = JSON.parse(data)
+    console.log(this.data)
+    this.setState({})
+  }
+
   render() {
     const { visible, warning, is_warning, loading } = this.state
     return (
@@ -55,11 +73,13 @@ class LoginForm extends Component {
         >
           <Container>
             <Input
+              defaultValue={this.data.email}
               prefix={<Icon type='mail' style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder='Email'
               onChange={({ target }) => (this.data.email = target.value)}
             />
             <Input
+              defaultValue={this.data.password}
               prefix={<Icon type='lock' style={{ color: "rgba(0,0,0,.25)" }} />}
               type='password'
               placeholder='Password'
@@ -68,6 +88,13 @@ class LoginForm extends Component {
             {is_warning ? (
               <Alert description={warning} type='error'></Alert>
             ) : null}
+            <CheckboxContainer>
+              <Checkbox
+                onChange={({ target }) => (this.is_remember = target.checked)}
+                defaultChecked={this.is_remember}
+              ></Checkbox>
+              <p>remember this password</p>
+            </CheckboxContainer>
           </Container>
         </Modal>
       </>
