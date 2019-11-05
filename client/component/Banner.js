@@ -1,11 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import WebContainer from "./WebContainer"
-
+import BannerImage from "../static/banner.svg"
 const Container = styled.div`
   width: 100%;
   height: 500px;
   background-color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`
+
+const BannerImageStyled = styled(BannerImage)`
+  font-size: 1000px;
 `
 
 const Wrapper = styled.div`
@@ -18,7 +26,9 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <WebContainer>
-      <Container></Container>
+      <Container>
+        <BannerImageStyled></BannerImageStyled>
+      </Container>
     </WebContainer>
   </Wrapper>
 )

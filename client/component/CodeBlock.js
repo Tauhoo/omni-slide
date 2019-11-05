@@ -4,9 +4,10 @@ import styled from "styled-components"
 const Container = styled.div`
   border-radius: 10px;
   background-color: #2d3436;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   font-size: 18px;
+  color: white;
 `
 
 export default Container

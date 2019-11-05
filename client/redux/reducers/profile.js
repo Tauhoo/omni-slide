@@ -7,6 +7,8 @@ export default (state = default_state, action) => {
       return { ...state, ...action.data, is_login: true }
     case "REMOVE_PROFILE":
       return { is_login: false }
+    case "UPDATE_KEY":
+      return { ...state, token: action.key }
     default:
       return state
   }

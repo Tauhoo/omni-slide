@@ -56,7 +56,7 @@ export default class extends Component {
               name={name}
               id={id}
               key={id}
-              url=''
+              url={`/slide?id=${id}&folder_id=${folder_id}`}
               onDelete={this.onDelete}
             ></FileItem>
           ))}

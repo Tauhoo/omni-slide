@@ -6,3 +6,8 @@ export const update_profile = data => ({
 export const remove_profile = () => ({
   type: "REMOVE_PROFILE",
 })
+
+export const update_key = key => ({
+  type: "UPDATE_KEY",
+  key,
+})

@@ -1,5 +1,3 @@
-import React from "react"
-import styled from "styled-components"
 import WebContainer from "../component/WebContainer"
 import History from "../component/History"
 import FileList from "../component/FileList"

@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>{web_name}</title>
-          <link rel='shortcut icon' type='image/svg' href='/static/logo.ico' />
+          <link rel='shortcut icon' href='/static/logo_triangle_blue.ico' />
           <link
             href='https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean'
             rel='stylesheet'

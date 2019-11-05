@@ -31,6 +31,7 @@ module.exports = {
       "/": { page: "/" },
       "/folders": { page: "/folders" },
       "/file": { page: "/file" },
+      "/slide": { page: "/slide" },
     }
   },
 }

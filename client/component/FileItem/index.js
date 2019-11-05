@@ -104,7 +104,11 @@ export default class extends Component {
             update name
           </Button>
         ) : null}
-        <Button type='danger' loading={delete_loading} onClick={this.delete}>
+        <Button
+          type='danger'
+          loading={delete_loading}
+          onClick={() => this.setState({ delete_loading: true }, this.delete)}
+        >
           delete
         </Button>
       </Container>

@@ -27,3 +27,10 @@ export const create_file = (folder_id, name) =>
 
 export const update_file_name = (id, folder_id, name) =>
   post("user/update_file_name", { id, folder_id, name })
+
+export const get_file = (folder_id, file_id) =>
+  get(`user/get_file/${folder_id}/${file_id}`)
+
+export const update_file = data => post("user/update_file", data)
+
+export const update_key = () => post("user/update_key", {})

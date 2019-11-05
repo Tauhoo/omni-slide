@@ -1,12 +1,13 @@
-import React from "react"
+import React, { Component } from "react"
 import WebContainer from "../component/WebContainer"
 import History from "../component/History"
 import FolderList from "../component/FolderList"
+import UpdateKeyForm from "../component/UpdateKey"
 import { Typography, Icon } from "antd"
 
 const { Title } = Typography
 
-const index = () => (
+export default () => (
   <>
     <WebContainer>
       <br />
@@ -16,9 +17,8 @@ const index = () => (
       ></History>
       <br />
       <Title>Folders</Title>
+      <UpdateKeyForm style={{ margin: "10px 0px" }}></UpdateKeyForm>
       <FolderList></FolderList>
     </WebContainer>
   </>
 )
-
-export default index

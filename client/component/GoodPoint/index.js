@@ -62,14 +62,15 @@ const GoodItem = ({ title, children, logo }) => (
 
 export default props => (
   <Container {...props}>
-    <GoodItem title='ice iceo' logo='/static/test.svg'>
-      iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv
+    <GoodItem title='Code easier' logo='/static/goodPoint/coding.png'>
+      You can make your slide display on your website easily.
     </GoodItem>
-    <GoodItem title='ice iceo' logo='/static/test.svg'>
-      iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv
+    <GoodItem title='Save time' logo='/static/goodPoint/time-management.png'>
+      You can set up your project faster. Others library or framework isn't
+      needed.
     </GoodItem>
-    <GoodItem title='ice iceo' logo='/static/test.svg'>
-      iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv iceposkdc sdpocks sdlcv
+    <GoodItem title='Save resource' logo='/static/goodPoint/folder.png'>
+      You don't need to manage you storage. It save your server resource.
     </GoodItem>
   </Container>
 )
