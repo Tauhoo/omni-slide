@@ -28,18 +28,18 @@ const index = () => (
         <Paragraph>First install our library via Npm or Yarn.</Paragraph>
         <CodeBlock>
           {`
-      npm install omni-slide-editor
-      yarn add omni-slide-editor
+npm install omni-slide-editor
+yarn add omni-slide-editor
       `}
         </CodeBlock>
         <br></br>
         <Paragraph>import our library to ypur project</Paragraph>
         <CodeBlock>
           {`
-      import React from 'react' 
-      import Controller from 'omni-slide-editor'
+import React from 'react' 
+import Controller from 'omni-slide-editor'
 
-      export default ()=> <Controller></Controller> 
+export default ()=> <Controller></Controller> 
       `}
         </CodeBlock>
       </Typography>

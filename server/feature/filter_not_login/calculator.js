@@ -7,6 +7,7 @@ const calculator = async (req, res, next) => {
         type: "text",
         detail: { text: "did't login" },
       })
+
     next()
   } catch (e) {
     error("filter_not_login/calculator", "error in try catch", e, req)

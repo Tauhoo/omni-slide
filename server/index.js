@@ -1,5 +1,7 @@
 const express = require("express")
 const session = require("express-session")
+const fs = require("fs")
+const https = require("https")
 
 const { port, session_secret } = require("./config")
 
@@ -70,4 +72,17 @@ app.get("/user/get_file/:folder_id/:file_id", ...get_file)
 app.get("/user/get_folder_list", ...get_folder_list)
 app.get("/user/get_folder_file/:folder_id", ...get_folder_file)
 
-app.listen(port, start_server)
+if (process.env.NODE_ENV === "production") {
+  const privateKey = fs.readFileSync(path.resolve("./ssl/private.key"), "utf8")
+  const certificate = fs.readFileSync(
+    path.resolve("./ssl/certificate.crt"),
+    "utf8"
+  )
+  const credentials = { key: privateKey, cert: certificate }
+
+  const httpsServer = https.createServer(credentials, app)
+
+  httpsServer.listen(port, start_server)
+} else {
+  app.listen(port, start_server)
+}

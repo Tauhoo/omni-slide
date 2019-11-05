@@ -7,7 +7,6 @@ import "prismjs/themes/prism-okaidia.css"
 const Container = styled.div`
   width: 100%;
   border-radius: 10px;
-  //background-color: #2d3436;
   padding: 0px;
   box-sizing: border-box;
   font-size: 18px;
@@ -18,6 +17,13 @@ const Container = styled.div`
     white-space: pre-wrap;
     margin: 0px;
     padding: 0px;
+    @media (max-width: 450px) {
+      font-size: 15px;
+    }
+  }
+
+  pre {
+    padding: 0px 20px;
   }
 `
 
