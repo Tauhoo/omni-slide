@@ -31,6 +31,7 @@ const get_file_by_token = require("./feature/get_file_by_token")
 
 const filter_not_login = require("./feature/filter_not_login")
 const { start_server } = require("./utilise/log")
+const redirect = require("./utilise/redirect")
 
 const app = express()
 
@@ -47,6 +48,11 @@ app.use(
 )
 
 app.use(cors)
+
+app.get("/", redirect)
+app.get("/folders", redirect)
+app.get("/file", redirect)
+app.get("/slide", redirect)
 
 app.post("/login", ...login)
 app.post("/register", ...register)
