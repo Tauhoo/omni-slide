@@ -11,7 +11,7 @@ const register = async (username, password, email, token) => {
           FROM "user" 
           WHERE email = $3
         )
-        RETURNING id, username, email, token;
+        RETURNING id, username, email, token, id;
       `,
       [username, password, email, token]
     )

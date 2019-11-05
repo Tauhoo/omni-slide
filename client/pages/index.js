@@ -11,40 +11,43 @@ const index = () => (
     <Banner></Banner>
     <WebContainer>
       <Typography style={{ marginTop: "48px" }}>
-        <Title>It's easier than you think</Title>
+        <Title>Why Omni-Slide?</Title>
         <Paragraph>
-          If you can build a website, you can build a desktop app. Electron is a
-          framework for creating native applications with web technologies like
-          JavaScript, HTML, and CSS. It takes care of the hard parts so you can
-          focus on the core of your application.
+          For a website owner, we provide you our library to help you by keep
+          your files in our lovely database and save your time from creating a
+          new library. For a user, we provide you our proud secure sharing. You
+          can send the token with your slide's link to your clients or friends
+          and they can see your files without logging in.
         </Paragraph>
       </Typography>
       <br></br>
       <Divider />
       <br />
       <Typography>
-        <Title>It's easier than you think</Title>
-        <Paragraph>
-          If you can build a website, you can build a desktop app. Electron is a
-          framework for creating native applications with web technologies like
-          JavaScript, HTML, and CSS. It takes care of the hard parts so you can
-          focus on the core of your application.
-        </Paragraph>
-      </Typography>
-      <br></br>
-      <CodeBlock>
-        <code style={{ whiteSpace: "pre-wrap" }}>{`
+        <Title>Quick guide</Title>
+        <Paragraph>First install our library via Npm or Yarn.</Paragraph>
+        <CodeBlock>
+          {`
+      npm install omni-slide-editor
+      yarn add omni-slide-editor
+      `}
+        </CodeBlock>
+        <br></br>
+        <Paragraph>import our library to ypur project</Paragraph>
+        <CodeBlock>
+          {`
       import React from 'react' 
       import Controller from 'omni-slide-editor'
 
       export default ()=> <Controller></Controller> 
-      `}</code>
-      </CodeBlock>
+      `}
+        </CodeBlock>
+      </Typography>
       <br />
       <Divider />
       <br></br>
       <Typography>
-        <Title>It's easier than you think</Title>
+        <Title>What profit you will receive?</Title>
         <Paragraph>
           There is a lot of profit that you will get if you use our library or
           our service. Your slide will be taken care of from us. You can make

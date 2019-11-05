@@ -5,7 +5,7 @@ import History from "../component/History"
 import { Icon, Typography } from "antd"
 import { get_file, update_file } from "../utils/api"
 import { Success, Warning } from "../utils/alert"
-import { throws } from "assert"
+import GetFileToken from "../component/GetFileToken"
 
 const { Title } = Typography
 
@@ -73,6 +73,7 @@ export default class extends Component {
 
   render() {
     const { data, loading } = this.state
+
     return (
       <WebContainer>
         <br />
@@ -87,6 +88,11 @@ export default class extends Component {
         ></History>
         <br></br>
         <Title>Slide</Title>
+        <GetFileToken
+          style={{ margin: "10px 0px" }}
+          file_id={this.id}
+          folder_id={this.folder_id}
+        ></GetFileToken>
         {loading ? null : <Editor onChange={this.onSave} data={data}></Editor>}
       </WebContainer>
     )

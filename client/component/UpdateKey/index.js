@@ -41,6 +41,7 @@ class UpdateKeyForm extends Component {
       <Container style={this.props.style}>
         <Input value={token}></Input>
         <Button
+          type='primary'
           loading={loading}
           onClick={() => this.setState({ loading: true }, this.onSubmit)}
         >

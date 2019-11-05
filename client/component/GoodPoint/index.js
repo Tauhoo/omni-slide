@@ -42,8 +42,8 @@ const GoodPointContainer = styled.div`
   align-items: center;
 `
 const Image = styled.img`
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 `
 
 const GoodItem = ({ title, children, logo }) => (

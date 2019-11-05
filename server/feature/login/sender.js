@@ -2,8 +2,9 @@ const { success, error } = require("../../utilise/log")
 const sender = async (req, res) => {
   try {
     const user = req.database_result.rows[0]
+
     req.session.user = user
-    const { username, email, token } = user
+    const { username, email, token, id } = user
     delete user.password
 
     success("login/sender", "user login success", req)
@@ -13,6 +14,7 @@ const sender = async (req, res) => {
         username,
         email,
         token,
+        id,
       },
     })
   } catch (e) {

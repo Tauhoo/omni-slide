@@ -26,9 +26,7 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <WebContainer>
-      <Container>
-        <BannerImageStyled></BannerImageStyled>
-      </Container>
+      <Container></Container>
     </WebContainer>
   </Wrapper>
 )
