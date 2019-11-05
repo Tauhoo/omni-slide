@@ -5,6 +5,7 @@ import RegisterButton from "../RegisterForm"
 import LoginButton from "../LoginForm"
 import connect from "../../redux/connect"
 import Button from "../MenuButton"
+import Logo from "../../static/Logo.svg"
 
 import { remove_profile } from "../../redux/action/profile_action"
 
@@ -17,7 +18,7 @@ const Container = styled.div`
   height: 70px;
   background-color: #34495e;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
 `
@@ -32,33 +33,44 @@ const Wrapper = styled.div`
   border-width: 0px 0px 1px 0px;
 `
 
+const LogoStyled = styled(Logo)`
+  font-size: 40px;
+`
+
 class index extends Component {
   constructor(props) {
     super(props)
     this.logout_session = logout_session.bind(this)
   }
   render() {
-    const { is_login, username } = this.props.profile
+    const { is_login } = this.props.profile
 
     return (
       <Wrapper>
         <WebContainer>
           <Container>
-            {is_login ? (
-              <>
-                <Button>
-                  <Link href='/folders'>
-                    <a>my folders</a>
-                  </Link>
-                </Button>
-                <Button onClick={() => this.logout_session()}>logout</Button>
-              </>
-            ) : (
-              <>
-                <RegisterButton></RegisterButton>
-                <LoginButton></LoginButton>
-              </>
-            )}
+            <Link href='/'>
+              <a>
+                <LogoStyled></LogoStyled>
+              </a>
+            </Link>
+            <div>
+              {is_login ? (
+                <>
+                  <Button>
+                    <Link href='/folders'>
+                      <a>my folders</a>
+                    </Link>
+                  </Button>
+                  <Button onClick={() => this.logout_session()}>logout</Button>
+                </>
+              ) : (
+                <>
+                  <RegisterButton></RegisterButton>
+                  <LoginButton></LoginButton>
+                </>
+              )}
+            </div>
           </Container>
         </WebContainer>
       </Wrapper>

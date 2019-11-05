@@ -10,10 +10,24 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @media (max-width: 650px) {
+    height: 400px;
+  }
+
+  @media (max-width: 500px) {
+    height: 300px;
+  }
 `
 
 const BannerImageStyled = styled(BannerImage)`
-  font-size: 1000px;
+  font-size: 550px;
+  @media (max-width: 650px) {
+    font-size: 400px;
+  }
+  @media (max-width: 500px) {
+    font-size: 300px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -26,7 +40,9 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <WebContainer>
-      <Container></Container>
+      <Container>
+        <BannerImageStyled></BannerImageStyled>
+      </Container>
     </WebContainer>
   </Wrapper>
 )

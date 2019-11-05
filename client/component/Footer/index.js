@@ -1,10 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import WebContainer from "../WebContainer"
+import Link from "next/link"
+import { Icon } from "antd"
 
 const Container = styled.div`
   width: 100%;
-  height: 100px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
 `
 const Wrapper = styled.div`
   width: 100%;
@@ -15,7 +19,11 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <WebContainer>
-      <Container></Container>
+      <Container>
+        <a target='_blank' href='https://github.com/Tauhoo/omni-slide-editor'>
+          <Icon type='github' style={{ fontSize: "36px" }} />
+        </a>
+      </Container>
     </WebContainer>
   </Wrapper>
 )
