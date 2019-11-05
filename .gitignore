@@ -76,6 +76,7 @@ typings/
 
 # next.js build output
 .next
+out
 
 # nuxt.js build output
 .nuxt
@@ -91,5 +92,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# SSL key
+ssl
+prove_files/
 
 # End of https://www.gitignore.io/api/node

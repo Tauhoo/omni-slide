@@ -2,7 +2,7 @@ const { create_folder } = require("../../database")
 const { error } = require("../../utilise/log")
 const fetch = async (req, res, next) => {
   try {
-    const { status } = await create_folder(req.body.name, req.session.user.id)
+    const { status, detail } = await create_folder(req.body.name, req.session.user.id)
     if (status === "error") {
       error(
         "create_folder/store",
