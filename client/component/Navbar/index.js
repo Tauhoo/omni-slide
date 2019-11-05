@@ -5,7 +5,7 @@ import RegisterButton from "../RegisterForm"
 import LoginButton from "../LoginForm"
 import connect from "../../redux/connect"
 import Button from "../MenuButton"
-import Logo from "../../static/Logo.svg"
+import Logo from "../../static/logo.svg"
 
 import { remove_profile } from "../../redux/action/profile_action"
 
