@@ -47,19 +47,19 @@ app.use(
   })
 )
 
+app.use(cors)
+
 app.get("/", redirect)
 app.get("/folders", redirect)
 app.get("/file", redirect)
 app.get("/slide", redirect)
 
-app.get("/get_file_by_token", ...get_file_by_token)
-
-app.use(cors)
-
 app.post("/login", ...login)
 app.post("/register", ...register)
 app.post("/login_session", ...login_session)
 app.post("/logout", ...logout)
+
+app.get("/get_file_by_token", ...get_file_by_token)
 
 app.use("/user", ...filter_not_login)
 
