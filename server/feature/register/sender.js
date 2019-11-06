@@ -4,7 +4,7 @@ const sender = async (req, res) => {
     const user = req.database_result.rows[0]
 
     req.session.user = user
-    delete user.id
+
     success("register/sender", "user register success", req)
     res.send({ status: "success", result: user })
   } catch (e) {
