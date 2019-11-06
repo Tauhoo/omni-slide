@@ -4,13 +4,23 @@ import WebContainer from "./WebContainer"
 const Container = styled.div`
   width: 100%;
   padding: 40px;
+  height: 400px;
   background-color: #2c3e50;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  @media (max-width: 700px) {
-    padding: 20px;
+  @media (max-width: 1060px) {
+    height: 300px;
+  }
+  @media (max-width: 900px) {
+    height: 250px;
+  }
+  @media (max-width: 670px) {
+    height: 200px;
+  }
+  @media (max-width: 520px) {
+    height: 150px;
   }
 `
 
@@ -22,8 +32,7 @@ const Wrapper = styled.div`
 `
 
 const Image = styled.img`
-  height: 300px;
-  max-width: 100%;
+  height: 100%;
 `
 
 export default () => (
